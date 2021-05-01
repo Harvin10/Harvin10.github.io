@@ -77,9 +77,9 @@ class App extends Component {
           </div>
           }
             <Switch>
-              <Route exact path="/" />
-              <Route path="/sorting" component={SortingVisualizer} />
-              <Route path="/pathFinding" render={(props) =>  (<PathFindingVisualizer {...props} height={ this.state.windowHeight } width={ this.state.windowWidth } />)} />
+              <Route exact path="sorting-algorithm/" />
+              <Route path="/sorting-algorithm/sorting" component={SortingVisualizer} />
+              <Route path="/sorting-algorithm/pathFinding" render={(props) =>  (<PathFindingVisualizer {...props} height={ this.state.windowHeight } width={ this.state.windowWidth } />)} />
             </Switch>
         </div>
       </Router>
