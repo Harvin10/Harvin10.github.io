@@ -1,0 +1,42 @@
+.Visualizer {
+    /* display */ 
+    display: flex;
+    flex-direction: column;
+    /* width/height */ 
+    height: 100%;
+    width: 100%;
+    /* padding/margin */ 
+    
+    /* border */ 
+    
+    /* text */ 
+    
+    /* shadow */ 
+    
+    /* transition/animation */ 
+    
+    /* others */ 
+}
+
+.Nodes {
+    /* display */ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* width/height */ 
+    
+    /* padding/margin */ 
+    padding: 50px;
+    margin-top: 10vh;
+    /* border */ 
+    
+    /* text */ 
+    
+    /* shadow */ 
+    
+    /* transition/animation */ 
+    
+    /* others */ 
+    box-sizing: border-box;
+}

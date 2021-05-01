@@ -1,0 +1,59 @@
+.hyperlink {
+    /* display */ 
+    display: flex;
+    align-items: center;
+    /* width/height */ 
+    height: 100%;
+    /* padding/margin */ 
+    padding: 5px;
+    /* border */ 
+    
+    /* text */ 
+    text-decoration: none;
+    /* shadow */ 
+    
+    /* transition/animation */ 
+    
+    /* others */ 
+}
+
+.hyperlink:hover {
+    /* display */ 
+    background-color: #F7F8F3;
+    /* width/height */ 
+    
+    /* padding/margin */ 
+    
+    /* border */ 
+    
+    /* text */ 
+    
+    /* shadow */ 
+    
+    /* transition/animation */ 
+    
+    /* others */ 
+}
+
+@media screen and (max-width: 768px) {
+    .hyperlink {
+        /* display */ 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* width/height */ 
+        width: 100%;
+        height: 100%;
+        /* padding/margin */ 
+        
+        /* border */ 
+        
+        /* text */ 
+        text-decoration: none;
+        /* shadow */ 
+        
+        /* transition/animation */ 
+        
+        /* others */ 
+    }
+}

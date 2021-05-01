@@ -1,0 +1,71 @@
+.Visualizer {
+    /* display */ 
+    display: flex;
+    flex-direction: column;
+    /* width/height */ 
+    height: 100%;
+    width: 100%;
+    /* padding/margin */ 
+    
+    /* border */ 
+    
+    /* text */ 
+    
+    /* shadow */ 
+    
+    /* transition/animation */ 
+    
+    /* others */ 
+}
+
+.Bars {
+    /* display */ 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* width/height */ 
+    height: 100%;
+    width: 100%;
+    /* padding/margin */ 
+    padding: 50px;
+    /* border */ 
+    
+    /* text */ 
+    
+    /* shadow */ 
+    
+    /* transition/animation */ 
+    
+    /* others */ 
+    box-sizing: border-box;
+}
+
+.Controller {
+    /* display */ 
+    
+    /* width/height */ 
+    
+    /* padding/margin */ 
+    
+    /* border */ 
+    
+    /* text */ 
+    
+    /* shadow */ 
+    
+    /* transition/animation */ 
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    /* others */ 
+}
+
+.hidden {
+    transform: translateY(1000px);
+    -webkit-transform: translateY(1000px);
+    -moz-transform: translateY(1000px);
+    -ms-transform: translateY(1000px);
+    -o-transform: translateY(1000px);
+}

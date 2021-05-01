@@ -1,0 +1,41 @@
+.text {
+    /* display */ 
+    
+    /* width/height */ 
+    width: 100%;
+    height: 50px;
+    /* padding/margin */ 
+    padding: 0 20px;
+    /* border */ 
+    border: 0px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    outline: none !important;
+    /* text */
+    font-size: 1.5rem;
+    /* shadow */
+    box-shadow: 6px 6px 10px gray;
+    /* transition/animation */ 
+    /* others */ 
+}
+
+.range {
+    /* display */ 
+    
+    /* width/height */ 
+    height: 50px;
+    /* padding/margin */ 
+    
+    /* border */ 
+    
+    /* text */ 
+    
+    /* shadow */ 
+    
+    /* transition/animation */ 
+    
+    /* others */ 
+}

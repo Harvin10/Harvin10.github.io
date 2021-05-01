@@ -1,0 +1,21 @@
+.Controller {
+    /* display */ 
+    background-color: #002C3E;
+    display: flex;
+    align-items: center;
+    /* width/height */ 
+    width: 100%;
+    height: 10vh;
+    /* padding/margin */ 
+    padding: 10px;
+    /* border */ 
+    
+    /* text */ 
+    
+    /* shadow */ 
+    
+    /* transition/animation */ 
+    
+    /* others */ 
+    box-sizing: border-box;
+}

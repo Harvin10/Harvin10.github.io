@@ -1,0 +1,19 @@
+.Node {
+    /* display */ 
+    display: inline-block;
+    /* width/height */ 
+    height: 50px;
+    width: 50px;
+    /* padding/margin */ 
+
+    /* border */ 
+    border: 1px solid black;
+    /* text */ 
+    
+    /* shadow */ 
+    
+    /* transition/animation */ 
+    
+    /* others */ 
+    box-sizing: border-box;
+}

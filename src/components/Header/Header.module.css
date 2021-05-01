@@ -1,0 +1,24 @@
+.header {
+    /* display */ 
+    background-color: #F7444E;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* width/height */ 
+    width: 100%;
+    height: 10vh;
+    /* padding/margin */ 
+    padding: 0 50px;
+    /* border */ 
+    
+    /* text */ 
+    
+    /* shadow */ 
+    
+    /* transition/animation */ 
+    
+    /* others */ 
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+}
