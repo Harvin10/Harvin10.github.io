@@ -29,7 +29,7 @@ class PathFindingVisualizer extends Component {
         let height = (this.props.height - (this.props.height * 20 / 100) - 100) / nodeSize;
         for(let i = 0; i < Math.floor(height); i++) {
             for(let j = 0; j < Math.floor((this.props.width - 100) / nodeSize); j++) {
-                node.push(this.nodeState(i, j));
+                node.push(this.nodeState(i, j, Math.floor(height), Math.floor((this.props.width - 100) / nodeSize)));
             }
             column++;
         }
@@ -40,13 +40,13 @@ class PathFindingVisualizer extends Component {
         });
     }
 
-    nodeState(x, y) {
+    nodeState(x, y, height, width) {
         const object = {
             x: x,
             y: y,
             isVisited: false,
-            isStart: x === 25 && y === 0,
-            isEnd: x === 25 && y === 50
+            isStart: x === Math.round(height / 2)  && y === Math.floor((width / 6) - 1),
+            isEnd: x === Math.round(height / 2) && y === Math.floor(width - (width / 6))
         }
         return object;
     }

@@ -17,3 +17,11 @@
     /* others */ 
     box-sizing: border-box;
 }
+
+.isStart {
+    background-color: green;
+}
+
+.isEnd {
+    background-color: red;
+}
