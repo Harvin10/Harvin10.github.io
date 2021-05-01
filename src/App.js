@@ -68,7 +68,7 @@ class App extends Component {
 
   render() {
     return (
-      <Router baseline="/">
+      <Router baseline={process.env.PUBLIC_URL}>
         <div className="App">
           <Header route={ links } viewMenu={ this.viewMenu } isClick={ this.state.isClick } isMobile={ this.state.isMobile }/>
           {!this.state.isMobile ? "" : 
