@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/sorting-algorithm/static/css/main.84f60b2e.chunk.css",
-    "main.js": "/sorting-algorithm/static/js/main.33798d15.chunk.js",
-    "main.js.map": "/sorting-algorithm/static/js/main.33798d15.chunk.js.map",
+    "main.js": "/sorting-algorithm/static/js/main.00e641b4.chunk.js",
+    "main.js.map": "/sorting-algorithm/static/js/main.00e641b4.chunk.js.map",
     "runtime-main.js": "/sorting-algorithm/static/js/runtime-main.ff682af0.js",
     "runtime-main.js.map": "/sorting-algorithm/static/js/runtime-main.ff682af0.js.map",
-    "static/js/2.767a967e.chunk.js": "/sorting-algorithm/static/js/2.767a967e.chunk.js",
-    "static/js/2.767a967e.chunk.js.map": "/sorting-algorithm/static/js/2.767a967e.chunk.js.map",
+    "static/js/2.08b3119c.chunk.js": "/sorting-algorithm/static/js/2.08b3119c.chunk.js",
+    "static/js/2.08b3119c.chunk.js.map": "/sorting-algorithm/static/js/2.08b3119c.chunk.js.map",
     "index.html": "/sorting-algorithm/index.html",
     "static/css/main.84f60b2e.chunk.css.map": "/sorting-algorithm/static/css/main.84f60b2e.chunk.css.map",
-    "static/js/2.767a967e.chunk.js.LICENSE.txt": "/sorting-algorithm/static/js/2.767a967e.chunk.js.LICENSE.txt"
+    "static/js/2.08b3119c.chunk.js.LICENSE.txt": "/sorting-algorithm/static/js/2.08b3119c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ff682af0.js",
-    "static/js/2.767a967e.chunk.js",
+    "static/js/2.08b3119c.chunk.js",
     "static/css/main.84f60b2e.chunk.css",
-    "static/js/main.33798d15.chunk.js"
+    "static/js/main.00e641b4.chunk.js"
   ]
 }
