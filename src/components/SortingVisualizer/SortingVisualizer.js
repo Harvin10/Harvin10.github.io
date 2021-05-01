@@ -116,6 +116,8 @@ class SortingVisualizer extends Component {
                             quickSort={ this.quickSort }
                             timeValue={ this.timeValue }   
                             barValue={ this.barValue }
+                            width={ this.props.width }
+                            height={ this.props.height }
                         />
                 </div>
             </div>

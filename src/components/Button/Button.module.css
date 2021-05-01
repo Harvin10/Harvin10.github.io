@@ -2,13 +2,15 @@
     /* display */ 
     background-color: #F7F8F3;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     /* width/height */ 
-    width: 150px;
+    min-width: 50px;
+    max-width: 150px;
     height: 50px;
     /* padding/margin */ 
-
+    padding: 0 10px;
     /* border */ 
     border: 0px;
     border-radius: 50px;
@@ -28,6 +30,7 @@
     -ms-transition: 0.1s;
     -o-transition: 0.1s;
     /* others */ 
+    box-sizing: border-box;
 }
 
 .button:hover {
