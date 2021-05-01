@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import Header from './components/Header/Header.js';
 import PopUpMenu from './components/PopUpMenu/PopUpMenu.js';
 import SortingVisualizer from './components/SortingVisualizer/SortingVisualizer';
@@ -68,21 +68,19 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <div className="App">
-          <Header route={ links } viewMenu={ this.viewMenu } isClick={ this.state.isClick } isMobile={ this.state.isMobile }/>
-          {!this.state.isMobile ? "" : 
-            <div className={ `menu ${this.state.isClick ? '' : 'hidden'}` } >
-              <PopUpMenu route={ links } viewMenu={ this.viewMenu } />
-          </div>
-          }
-            <Switch>
-              <Route exact path='/' />
-              <Route path='/sorting' component={SortingVisualizer} />
-              <Route path='/pathFinding' render={(props) =>  (<PathFindingVisualizer {...props} height={ this.state.windowHeight } width={ this.state.windowWidth } />)} />
-            </Switch>
+      <div className="App">
+        <Header route={ links } viewMenu={ this.viewMenu } isClick={ this.state.isClick } isMobile={ this.state.isMobile }/>
+        {!this.state.isMobile ? "" : 
+          <div className={ `menu ${this.state.isClick ? '' : 'hidden'}` } >
+            <PopUpMenu route={ links } viewMenu={ this.viewMenu } />
         </div>
-      </Router>
+        }
+          <Switch>
+            <Route exact path='/' />
+            <Route path='/sorting' component={SortingVisualizer} />
+            <Route path='/pathFinding' render={(props) =>  (<PathFindingVisualizer {...props} height={ this.state.windowHeight } width={ this.state.windowWidth } />)} />
+          </Switch>
+      </div>
     );
   }
 }
