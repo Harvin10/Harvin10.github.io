@@ -68,7 +68,7 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
+      <Router baseline="/">
         <div className="App">
           <Header route={ links } viewMenu={ this.viewMenu } isClick={ this.state.isClick } isMobile={ this.state.isMobile }/>
           {!this.state.isMobile ? "" : 
@@ -77,9 +77,9 @@ class App extends Component {
           </div>
           }
             <Switch>
-              <Route exact path={process.env.PUBLIC_URL + '/'} />
-              <Route path={process.env.PUBLIC_URL + '/sorting'} component={SortingVisualizer} />
-              <Route path={process.env.PUBLIC_URL + '/pathFinding'} render={(props) =>  (<PathFindingVisualizer {...props} height={ this.state.windowHeight } width={ this.state.windowWidth } />)} />
+              <Route exact path='/' />
+              <Route path='/sorting' component={SortingVisualizer} />
+              <Route path='/pathFinding' render={(props) =>  (<PathFindingVisualizer {...props} height={ this.state.windowHeight } width={ this.state.windowWidth } />)} />
             </Switch>
         </div>
       </Router>
