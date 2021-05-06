@@ -10,7 +10,7 @@ function PopUpMenu(props) {
                 props.viewMenu(true);
             }
             }}>
-            { props.isClick ? <img src="" alt="cross"/> : <img src="" alt="three stripe"/> }
+            { props.isClick ? <img src="cross.svg" alt="cross"/> : <img src="menu.svg" alt="three stripe"/> }
         </div>
     );
 }

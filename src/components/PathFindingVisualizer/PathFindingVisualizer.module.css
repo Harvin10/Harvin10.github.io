@@ -18,7 +18,7 @@
     /* others */ 
 }
 
-.Nodes {
+.Grid {
     /* display */ 
     display: flex;
     flex-wrap: wrap;
@@ -39,4 +39,22 @@
     
     /* others */ 
     box-sizing: border-box;
+}
+
+.GridRow {
+    /* display */ 
+    display: flex;
+    /* width/height */ 
+    
+    /* padding/margin */ 
+    
+    /* border */ 
+    
+    /* text */ 
+    
+    /* shadow */ 
+    
+    /* transition/animation */ 
+    
+    /* others */ 
 }

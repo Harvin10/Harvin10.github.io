@@ -109,16 +109,16 @@ class SortingVisualizer extends Component {
                 </div>
                 <div className={ `${styles.Controller} ${(this.state.sorting) ? styles.hidden : ""}` }>
                     <SortingController 
-                            effect={ this.effect } 
-                            bubbleSort={ this.bubbleSort } 
-                            selectionSort={ this.selectionSort }
-                            mergeSort={ this.mergeSort } 
-                            quickSort={ this.quickSort }
-                            timeValue={ this.timeValue }   
-                            barValue={ this.barValue }
-                            width={ this.props.width }
-                            height={ this.props.height }
-                        />
+                        effect={ this.effect } 
+                        bubbleSort={ this.bubbleSort } 
+                        selectionSort={ this.selectionSort }
+                        mergeSort={ this.mergeSort } 
+                        quickSort={ this.quickSort }
+                        timeValue={ this.timeValue }   
+                        barValue={ this.barValue }
+                        width={ this.props.width }
+                        height={ this.props.height }
+                    />
                 </div>
             </div>
         )
