@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './PopUpMenuButton.module.css';
+import menu from '../../image/menu.svg';
+import cross from '../../image/cross.svg';
 
 function PopUpMenu(props) {
     return (
@@ -10,7 +12,7 @@ function PopUpMenu(props) {
                 props.viewMenu(true);
             }
             }}>
-            { props.isClick ? <img src="cross.svg" alt="cross"/> : <img src="menu.svg" alt="three stripe"/> }
+            { props.isClick ? <img src={ cross } alt="cross"/> : <img src={ menu } alt="three stripe"/> }
         </div>
     );
 }
