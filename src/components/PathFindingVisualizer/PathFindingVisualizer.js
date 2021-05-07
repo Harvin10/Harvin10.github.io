@@ -10,8 +10,9 @@ class PathFindingVisualizer extends Component {
         this.state = { 
             grid: [], //nodes object
             nodes: [], //nodes visualized
-            Y: 0,
+            StartY: 0,
             StartX: 0,
+            EndY: 0,
             EndX: 0,
             marginBottom: 0,
             time: 50
@@ -44,8 +45,9 @@ class PathFindingVisualizer extends Component {
         var margin_bottom = height * nodeSize - (grid.length * nodeSize);
         this.setState({
             grid: grid,  
-            Y: Math.round(height / 2),
+            StartY: Math.round(height / 2),
             StartX: Math.floor((width / 6) - 1), 
+            EndY: Math.round(height / 2),
             EndX: Math.floor(width - (width / 6)),
             marginBottom: margin_bottom
         });
@@ -57,18 +59,19 @@ class PathFindingVisualizer extends Component {
             y: y,
             position: Infinity,
             isVisited: false,
-            isStart: x === Math.round(height / 2)  && y === Math.floor((width / 6) - 1),
+            isStart: x === Math.round(height / 2) && y === Math.floor((width / 6) - 1),
             isEnd: x === Math.round(height / 2) && y === Math.floor(width - (width / 6)),
+            isWall: false,
             prev: null
         }
         return object;
     }
 
     breadthFirstSearch = () => {
-        let Y = this.state.Y;
+        let StartY = this.state.StartY;
         let StartX = this.state.StartX;
-        this.state.grid[Y][StartX].isVisited = true;
-        let answer = pathFindingAlgorithm.BFSalgo(this.state.grid, this.state.nodes, Y, this.state.EndX, [this.state.grid[Y][StartX]], this.state.time);
+        this.state.grid[StartY][StartX].isVisited = true;
+        let answer = pathFindingAlgorithm.BFSalgo(this.state.grid, this.state.nodes, this.state.EndY, this.state.EndX, [this.state.grid[StartY][StartX]], this.state.time);
         console.log(answer);
         answer
             .then(res => {

@@ -25,3 +25,7 @@
 .isEnd {
     background-color: red;
 }
+
+.isWall {
+    background-color: black;
+}
