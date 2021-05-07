@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom';
 import Header from './components/Header/Header.js';
 import PopUpMenu from './components/PopUpMenu/PopUpMenu.js';
 import SortingVisualizer from './components/SortingVisualizer/SortingVisualizer';
