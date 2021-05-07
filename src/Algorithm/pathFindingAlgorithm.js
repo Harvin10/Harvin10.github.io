@@ -56,7 +56,6 @@
 export async function BFSalgo(grid, nodes, Y, End, current, time) {
     let nearby = ScanningNearby(current, grid);
     if(nearby === current) {
-        console.log("Failed");
         return "failed";
     }
     for(let i = 0; i < nearby.length; i++) {

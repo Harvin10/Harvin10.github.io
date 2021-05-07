@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './PopUpMenuButton.module.css';
-import menu from '../image/menu.svg';
-import cross from '../image/cross.svg';
+import menu from '../../image/menu.svg';
+import cross from '../../image/cross.svg';
 
 function PopUpMenu(props) {
     return (

@@ -72,7 +72,6 @@ class PathFindingVisualizer extends Component {
         let StartX = this.state.StartX;
         this.state.grid[StartY][StartX].isVisited = true;
         let answer = pathFindingAlgorithm.BFSalgo(this.state.grid, this.state.nodes, this.state.EndY, this.state.EndX, [this.state.grid[StartY][StartX]], this.state.time);
-        console.log(answer);
         answer
             .then(res => {
                 pathFindingAlgorithm.backtracking(res, this.state.nodes, this.state.grid, this.state.time);
