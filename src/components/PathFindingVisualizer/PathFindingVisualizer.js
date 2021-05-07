@@ -14,16 +14,12 @@ class PathFindingVisualizer extends Component {
             StartX: 0,
             EndX: 0,
             marginBottom: 0,
-            time: 10
+            time: 50
         };
     }
 
     componentDidMount() {
         this.resetGrid();
-        // let Nodes_Row = document.querySelectorAll(".Nodes_row");
-        // Nodes_row.forEach(() => {
-        //     Nodes_row.push
-        // })
         this.setState({ nodes: document.getElementsByClassName("Nodes") });
     }
 
@@ -41,7 +37,7 @@ class PathFindingVisualizer extends Component {
         for(let i = 0; i < Math.floor(height); i++) {
             let row = [];
             for(let j = 0; j < Math.floor(width); j++) {
-                row.push(this.nodeState(i, j, Math.floor(height), Math.floor(width)));
+                row.push(this.nodeState(i, j, Math.floor(height), width));
             }
             grid.push(row);
         }
@@ -50,7 +46,7 @@ class PathFindingVisualizer extends Component {
             grid: grid,  
             Y: Math.round(height / 2),
             StartX: Math.floor((width / 6) - 1), 
-            EndX: Math.floor(width - (width / 6) + 1),
+            EndX: Math.floor(width - (width / 6)),
             marginBottom: margin_bottom
         });
     }
@@ -62,7 +58,8 @@ class PathFindingVisualizer extends Component {
             position: Infinity,
             isVisited: false,
             isStart: x === Math.round(height / 2)  && y === Math.floor((width / 6) - 1),
-            isEnd: x === Math.round(height / 2) && y === Math.floor(width - (width / 6) + 1)
+            isEnd: x === Math.round(height / 2) && y === Math.floor(width - (width / 6)),
+            prev: null
         }
         return object;
     }
@@ -71,18 +68,13 @@ class PathFindingVisualizer extends Component {
         let Y = this.state.Y;
         let StartX = this.state.StartX;
         this.state.grid[Y][StartX].isVisited = true;
-        let current = [
-            {
-                y: Y, 
-                x: StartX
-            }
-        ]
-        let answer = pathFindingAlgorithm.BFSalgo(this.state.grid, this.state.nodes, Y, this.state.EndX, current, this.state.time);
+        let answer = pathFindingAlgorithm.BFSalgo(this.state.grid, this.state.nodes, Y, this.state.EndX, [this.state.grid[Y][StartX]], this.state.time);
         console.log(answer);
         answer
             .then(res => {
-                console.log(res);
-            })        
+                pathFindingAlgorithm.backtracking(res, this.state.nodes, this.state.grid, this.state.time);
+            })     
+           
     }
 
     render() {

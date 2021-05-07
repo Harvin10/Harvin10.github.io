@@ -3,54 +3,83 @@
     let ScanningNearby = (current, grid) => {
         let nearby = [];
         for(let i = 0; i < current.length; i++) {
-            let fourSide = [
-                { 
-                    y: current[i].y + 1, 
-                    x: current[i].x
-                },
-                {
-                    y: current[i].y, 
-                    x: current[i].x - 1
-                },
-                {
-                    y: current[i].y - 1, 
-                    x: current[i].x
-                },
-                {
-                    y: current[i].y, 
-                    x: current[i].x + 1
-                }
-            ]
-            nearby.push(...fourSide);
+            let x = current[i].x;
+            let y = current[i].y;
+            for(let j = 0; j < 4; j++) {
+                switch(j) {
+                    case 0: {
+                        if(y >= 0 && y < grid[0].length && x + 1 >= 0 && x + 1 < grid.length) {
+                            if(!grid[x + 1][y].isVisited) {
+                                nearby.push(grid[x + 1][y]);
+                                grid[x + 1][y].prev = grid[x][y]
+                            }
+                        }
+                        break;
+                    }
+                    case 1: {
+                        if(y + 1 >= 0 && y + 1 < grid[0].length && x >= 0 && x < grid.length)
+                            if(!grid[x][y + 1].isVisited) {
+                                nearby.push(grid[x][y + 1]);
+                                grid[x][y + 1].prev = grid[x][y]
+                            }
+                        break;
+                    }
+                    case 2: {
+                        if(y >= 0 && y < grid[0].length && x - 1 >= 0 && x - 1 < grid.length)
+                            if(!grid[x - 1][y].isVisited) {
+                                nearby.push(grid[x - 1][y]);
+                                grid[x - 1][y].prev = grid[x][y]
+                            }
+                        break;
+                    }
+                    case 3: {
+                        if(y - 1 >= 0 && y - 1 < grid[0].length && x >= 0 && x < grid.length)
+                            if(!grid[x][y - 1].isVisited) {
+                                nearby.push(grid[x][y - 1]);
+                                grid[x][y - 1].prev = grid[x][y]
+                            }
+                        break;
+                    }
+                } 
+            }
         }
-        nearby = nearby.filter((item) => {
-            return (item.x >= 0 && item.x < grid[0].length) && (item.y >= 0 && item.y < grid.length)
-        }).filter((item) => {
-            return !grid[item.y][item.x].isVisited;
-        })
         return nearby;
     }
 
 export async function BFSalgo(grid, nodes, Y, End, current, time) {
     let nearby = ScanningNearby(current, grid);
     for(let i = 0; i < nearby.length; i++) {
-        if(!grid[nearby[i].y][nearby[i].x].isVisited) {
+        if(!nearby[i].isVisited) {
             await new Promise((resolve) => setTimeout(resolve, time));
-            nodes[(grid[0].length * nearby[i].y) + nearby[i].x].style.backgroundColor = "yellow";
-            grid[nearby[i].y][nearby[i].x].isVisited = true; 
-            if(grid[nearby[i].y][nearby[i].x] === grid[Y][End]) {
+            nodes[(grid[0].length * nearby[i].x) + nearby[i].y].style.backgroundColor = "yellow";
+            nearby[i].isVisited = true; 
+            if(nearby[i] === grid[Y][End]) {
                 await new Promise((resolve) => setTimeout(resolve, time));
                 for(let i = 0; i < nearby.length; i++) {
-                    nodes[(grid[0].length * nearby[i].y) + nearby[i].x].style.backgroundColor = "lime";
+                    if(nearby[i].isVisited)
+                        nodes[(grid[0].length * nearby[i].x) + nearby[i].y].style.backgroundColor = "lime";
                 }
-                nodes[(grid[0].length * nearby[i].y) + nearby[i].x].style.backgroundColor = "red";
-                return [nearby[i].y, nearby[i].x];
+                nodes[(grid[0].length * nearby[i].x) + nearby[i].y].style.backgroundColor = "red";
+                return nearby[i];
             }
         }   
     }
     await new Promise((resolve) => setTimeout(resolve, time));
     for(let i = 0; i < nearby.length; i++) {
-        nodes[(grid[0].length * nearby[i].y) + nearby[i].x].style.backgroundColor = "lime";
+        nodes[(grid[0].length * nearby[i].x) + nearby[i].y].style.backgroundColor = "lime";
     }
     return await this.BFSalgo(grid, nodes, Y, End, nearby, time);
+}
+
+export async function backtracking(lastNode, nodes, grid, time) {
+    let path = [];
+    while(lastNode.prev !== null) {
+        path.push(lastNode.prev)
+        lastNode = lastNode.prev
+    }
+    path.pop()
+    for(let i = path.length - 1; i >= 0; i--) {
+        await new Promise((resolve) => setTimeout(resolve, time));
+        nodes[(grid[0].length * path[i].x) + path[i].y].style.backgroundColor = "yellow";
+    }
 }
