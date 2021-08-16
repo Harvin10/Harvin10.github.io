@@ -1,3 +1,4 @@
 Algorithm Visualizer
 
-visit page: https://harvin10.github.io/sorting-algorithm/
+Sorting algorithm: https://harvinpratama.my.id/#/sorting
+PathFinding algorithm: https://harvinpratama.my.id/#/pathFinding
